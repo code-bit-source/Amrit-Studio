@@ -115,7 +115,7 @@ export const techMarquee = [
 export const projects: ProjectEntry[] = [
   {
     title: 'Saheli Store',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'Full Stack Developer',
     duration: 'Part of my Puro Marketing delivery experience',
     type: 'featured',
@@ -149,7 +149,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: 'Course Management System',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'MERN Stack Developer',
     type: 'featured',
     status: 'in-progress',
@@ -166,7 +166,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: 'Lumina',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'Frontend Developer',
     type: 'standard',
     status: 'frontend-demo',
@@ -213,7 +213,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: 'Advocate Management System',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'Full Stack Developer',
     type: 'standard',
     status: 'frontend-demo',
@@ -231,7 +231,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: 'Marketing Agency Prototype',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'Frontend + Auth Developer',
     type: 'standard',
     status: 'in-progress',
@@ -248,7 +248,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     title: 'VFX Artist Portfolio',
-    company: 'Puro Marketing',
+    company: 'Self Initiated',
     role: 'Portfolio Designer & Developer',
     type: 'standard',
     status: 'live',

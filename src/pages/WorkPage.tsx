@@ -62,7 +62,7 @@ const WorkPage = () => {
       <div className="bg-[#0a0a0a] pt-40 pb-20 px-6 md:px-12 min-h-screen">
         <header className="mb-28 md:mb-36">
           <TextReveal
-            text="Puro Marketing Work"
+            text="Crafting Digital Experiences That Drive Growth"
             className="text-[clamp(3.4rem,12vw,8rem)] md:text-[clamp(4.5rem,9vw,9rem)] font-bold uppercase leading-[0.85] tracking-tighter text-white max-w-[10ch]"
           />
 

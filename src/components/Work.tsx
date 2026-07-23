@@ -54,7 +54,7 @@ export const Work = () => {
             Selected Work
           </p>
           <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter text-white">
-            Puro Company <br /> <span className="text-white/30">and beyond</span>
+            Puro Marketing <br /> <span className="text-white/30">and beyond</span>
           </h2>
         </div>
         <p className="text-white/45 max-w-sm md:text-right uppercase text-[10px] md:text-xs tracking-widest font-bold">
