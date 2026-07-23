@@ -37,13 +37,14 @@ export const socialLinks = {
 export const companyReference = {
   company: 'Puro Marketing',
   founder: 'Payal Mehta',
-  phone: '+91 86556 55581',
+  phone: 'hello@puromarketing.in',
+  website: 'https://puromarketing.in',
 } as const;
 
 export const experienceHighlights = [
   { value: '14', label: 'Months at Puro Marketing' },
   { value: '12', label: 'Months freelance experience' },
-  { value: '6', label: 'Core projects showcased' },
+  { value: '20+', label: 'Core projects showcased' },
   { value: '360', label: 'Marketing + product coverage' },
 ] as const;
 
@@ -55,7 +56,7 @@ export const experienceEntries: ExperienceEntry[] = [
     mode: 'Full-time experience',
     summary:
       'Worked across eCommerce, marketing websites, portfolios and admin-led product builds, including several of the projects listed below.',
-    meta: 'Reference available via founder Payal Mehta • +91 86556 55581',
+    meta: 'Reference available via founder Payal Mehta • hello@puromarketing.in',
   },
   {
     company: 'Freelance',
@@ -162,6 +163,66 @@ export const projects: ProjectEntry[] = [
     accent: '#79f2ff',
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000&auto=format&fit=crop',
+    year: '2026',
+  },
+  {
+    title: 'Kriishiv',
+    company: 'Puro Marketing',
+    role: 'WordPress Developer',
+    type: 'standard',
+    status: 'live',
+    summary:
+      'A WordPress eCommerce website delivered under Puro Marketing, focused on product presentation, storefront structure and smooth shopping flow.',
+    stack: ['WordPress', 'eCommerce', 'Responsive Design', 'Storefront UX'],
+    links: [{ label: 'Live Site', href: 'https://kriishiv.com/' }],
+    accent: '#e2fb4b',
+    image:
+      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2000&auto=format&fit=crop',
+    year: '2026',
+  },
+  {
+    title: 'Miles and Memories',
+    company: 'Puro Marketing',
+    role: 'WordPress Developer',
+    type: 'standard',
+    status: 'live',
+    summary:
+      'A WordPress car rental website built under Puro Marketing with service-led navigation, booking-focused structure and clean conversion paths.',
+    stack: ['WordPress', 'Car Rental', 'Service Website', 'Responsive UI'],
+    links: [{ label: 'Live Site', href: 'https://milesandmemoriesindia.com/' }],
+    accent: '#ffffff',
+    image:
+      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop',
+    year: '2026',
+  },
+  {
+    title: 'Yummy Tales of Tummy',
+    company: 'Puro Marketing',
+    role: 'WordPress Maintenance & Revamp',
+    type: 'standard',
+    status: 'live',
+    summary:
+      'Handled maintenance and revamp work for a chef and food recipe website under Puro Marketing, improving presentation and keeping the site production-ready.',
+    stack: ['WordPress', 'Maintenance', 'Website Revamp', 'Content Site'],
+    links: [{ label: 'Live Site', href: 'https://yummytalesoftummy.com/' }],
+    accent: '#ffb84d',
+    image:
+      'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2000&auto=format&fit=crop',
+    year: '2026',
+  },
+  {
+    title: 'Urban Spacing',
+    company: 'Puro Marketing',
+    role: 'WordPress Developer',
+    type: 'standard',
+    status: 'live',
+    summary:
+      'A WordPress website for an interior design brand delivered under Puro Marketing, built to present projects, services and premium visual identity clearly.',
+    stack: ['WordPress', 'Interior Design', 'Brand Website', 'Responsive Layout'],
+    links: [{ label: 'Live Site', href: 'https://urbanspacing.com/' }],
+    accent: '#79f2ff',
+    image:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2000&auto=format&fit=crop',
     year: '2026',
   },
   {

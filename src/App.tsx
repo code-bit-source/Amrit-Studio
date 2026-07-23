@@ -43,7 +43,7 @@ function App() {
         {loading ? (
           <motion.div
             key="loader"
-            className="fixed inset-0 z-[100] bg-[#0a0a0a] flex items-center justify-center"
+            className="fixed inset-0 z-100 bg-[#0a0a0a] flex items-center justify-center"
             exit={{ 
               clipPath: "inset(0 0 100% 0)",
               transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 

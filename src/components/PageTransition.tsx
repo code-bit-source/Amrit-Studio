@@ -9,7 +9,7 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <motion.div
-        className="fixed inset-0 z-[100] bg-[#e2fb4b] pointer-events-none origin-bottom"
+        className="fixed inset-0 z-100 bg-[#e2fb4b] pointer-events-none origin-bottom"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}

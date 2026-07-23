@@ -46,7 +46,7 @@ export const Cursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-3 h-3 bg-[#e2fb4b] rounded-full pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center overflow-hidden"
+      className="fixed top-0 left-0 w-3 h-3 bg-[#e2fb4b] rounded-full pointer-events-none z-9999 mix-blend-difference flex items-center justify-center overflow-hidden"
       style={{
         x: mouseX,
         y: mouseY,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-12 bg-[#0a0a0a] pt-32 pb-24 overflow-hidden">
+    <section className="relative min-h-100dvh flex flex-col justify-center px-6 md:px-12 bg-[#0a0a0a] pt-32 pb-24 overflow-hidden">
       <div className="relative z-10">
         <div className="overflow-hidden">
           <motion.h1 
@@ -50,7 +50,7 @@ export const Hero = () => {
           className="flex items-center gap-6"
         >
           <span className="text-white/20 uppercase tracking-[0.5em] text-[10px] font-bold whitespace-nowrap">Awwwards SOTD 2024</span>
-          <div className="w-20 h-[1px] bg-white/10" />
+          <div className="w-20 h-px bg-white/10" />
           <span className="text-white/20 uppercase tracking-[0.5em] text-[10px] font-bold whitespace-nowrap">FWA Winner</span>
         </motion.div>
       </div>
@@ -66,7 +66,7 @@ export const Hero = () => {
         className="absolute bottom-10 left-6 md:left-12 flex items-center gap-4 text-white/20 text-[10px] md:text-sm tracking-widest uppercase"
       >
         <span>Scroll Down</span>
-        <div className="w-8 md:w-12 h-[1px] bg-white/20" />
+        <div className="w-8 md:w-12 h-px bg-white/20" />
       </motion.div>
 
       {/* Decorative background elements */}

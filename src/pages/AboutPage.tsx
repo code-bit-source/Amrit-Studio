@@ -60,32 +60,32 @@ const SKILL_GROUPS = [
   },
 ] as const;
 
-const SERVICES = [
-  {
-    number: '01',
-    title: 'MERN Stack Applications',
-    description:
-      'End-to-end product development covering UI, backend APIs, auth, database structure and deployment.',
-  },
-  {
-    number: '02',
-    title: 'Marketing Websites',
-    description:
-      'High-clarity marketing pages and service websites designed to look premium and communicate fast.',
-  },
-  {
-    number: '03',
-    title: 'eCommerce & Admin Panels',
-    description:
-      'Storefronts, product flows, course selling systems and role-aware admin experiences.',
-  },
-  {
-    number: '04',
-    title: 'Portfolio & Brand Presence',
-    description:
-      'Professional portfolio experiences for creators, artists and personal brands that need credibility.',
-  },
-] as const;
+// const SERVICES = [
+//   {
+//     number: '01',
+//     title: 'MERN Stack Applications',
+//     description:
+//       'End-to-end product development covering UI, backend APIs, auth, database structure and deployment.',
+//   },
+//   {
+//     number: '02',
+//     title: 'Marketing Websites',
+//     description:
+//       'High-clarity marketing pages and service websites designed to look premium and communicate fast.',
+//   },
+//   {
+//     number: '03',
+//     title: 'eCommerce & Admin Panels',
+//     description:
+//       'Storefronts, product flows, course selling systems and role-aware admin experiences.',
+//   },
+//   {
+//     number: '04',
+//     title: 'Portfolio & Brand Presence',
+//     description:
+//       'Professional portfolio experiences for creators, artists and personal brands that need credibility.',
+//   },
+// ] as const;
 
 const AboutPage = () => {
   return (
@@ -127,7 +127,7 @@ const AboutPage = () => {
             </div>
             <div className="space-y-10 md:space-y-12 md:pt-32">
               <p className="text-lg md:text-2xl text-white/60 leading-relaxed font-light">
-                My work spans Puro Marketing and freelance delivery, covering eCommerce builds, course platforms, marketing websites, admin panels and portfolio experiences. The projects shown across this website reflect that working range directly.
+                My work spans eCommerce builds, course platforms, marketing websites, admin panels and portfolio experiences. The projects shown across this website reflect that working range directly.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 md:pt-12 border-t border-white/10">
                 {experienceHighlights.map((item) => (
@@ -156,7 +156,7 @@ const AboutPage = () => {
               </h2>
             </div>
             <p className="text-white/50 text-base md:text-lg max-w-xl font-light">
-              Current experience positioning across Puro Marketing and one year of freelance delivery, with listed work and company reference aligned to the rest of the portfolio.
+              Current experience positioning alongside one year of freelance delivery, with listed work and company reference aligned to the rest of the portfolio.
             </p>
           </div>
 
@@ -169,7 +169,7 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="group border border-white/10 hover:border-[#e2fb4b]/50 transition-colors rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 bg-white/[0.02]"
+                  className="group border border-white/10 hover:border-[#e2fb4b]/50 transition-colors rounded-3xl md:rounded-4xl p-6 md:p-10 bg-white/2"
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8 mb-6 md:mb-8">
                     <div>
@@ -208,7 +208,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="border border-white/10 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white/[0.02] h-fit"
+              className="border border-white/10 rounded-3xl md:rounded-4xl p-6 md:p-8 bg-white/2 h-fit"
             >
               <h4 className="text-[#e2fb4b] uppercase tracking-widest text-[10px] md:text-sm font-bold mb-5">
                 Reference
@@ -249,9 +249,9 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
-                className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-white/10 bg-white/[0.02]"
+                className="rounded-3xl md:rounded-4xl overflow-hidden border border-white/10 bg-white/2"
               >
-                <div className="aspect-[16/10] overflow-hidden">
+                <div className="aspect-16/10 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -273,7 +273,7 @@ const AboutPage = () => {
             ))}
           </div>
 
-          <div className="border border-white/10 rounded-[1.5rem] md:rounded-[2rem] bg-white/[0.02] p-6 md:p-8">
+          <div className="border border-white/10 rounded-3xl md:rounded-4xl bg-white/2 p-6 md:p-8">
             <p className="text-white/40 uppercase text-[10px] md:text-xs tracking-widest font-bold mb-5">
               Additional Listed Projects
             </p>
@@ -313,7 +313,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="border border-white/10 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white/[0.02] hover:border-[#e2fb4b]/40 transition-colors"
+                className="border border-white/10 rounded-3xl md:rounded-4xl p-6 md:p-8 bg-white/2 hover:border-[#e2fb4b]/40 transition-colors"
               >
                 <h4 className="text-white uppercase tracking-widest text-xs md:text-sm font-bold mb-5 md:mb-6">
                   {group.title}
@@ -322,7 +322,7 @@ const AboutPage = () => {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-white/70 text-xs md:text-sm border border-white/10 rounded-full px-3 py-1.5 bg-white/[0.02]"
+                      className="text-white/70 text-xs md:text-sm border border-white/10 rounded-full px-3 py-1.5 bg-white/2"
                     >
                       {skill}
                     </span>
@@ -351,7 +351,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="group grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 items-start py-8 md:py-10 border-b border-white/10 hover:bg-white/[0.02] transition-colors px-2"
+                className="group grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 items-start py-8 md:py-10 border-b border-white/10 hover:bg-white/2 transition-colors px-2"
               >
                 <span className="text-[#e2fb4b] text-sm md:text-base font-bold tracking-widest">
                   {step.number}
@@ -398,7 +398,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-[2rem] md:rounded-[3rem] bg-[#e2fb4b] p-8 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+            className="rounded-4xl md:rounded-[3rem] bg-[#e2fb4b] p-8 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
           >
             <div>
               <h3 className="text-black text-3xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.95] max-w-2xl">

@@ -73,7 +73,7 @@ const WorkPage = () => {
               transition={{ delay: 0.4 }}
               className="text-white/45 max-w-xl uppercase text-xs tracking-[0.2em]"
             >
-              A curated portfolio of eCommerce, admin, marketing and brand work built across Puro Marketing and one year of freelance delivery.
+              A curated portfolio of eCommerce, admin, marketing and brand work built across professional and freelance delivery.
             </motion.p>
 
             <motion.div
@@ -88,7 +88,7 @@ const WorkPage = () => {
           </div>
         </header>
 
-        <div className="mx-[-1.5rem] md:mx-[-3rem]">
+        <div className="-mx-6 md:-mx-12">
           <ExperienceSection />
         </div>
 
@@ -132,7 +132,7 @@ const WorkPage = () => {
                 key={item.title}
                 {...reveal}
                 transition={{ duration: 0.7, delay: i * 0.05 }}
-                className="group grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-start py-10 md:py-14 border-b border-white/10 hover:bg-white/[0.02] transition-colors px-2"
+                className="group grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-start py-10 md:py-14 border-b border-white/10 hover:bg-white/2 transition-colors px-2"
               >
                 <div>
                   <p className="text-white/40 uppercase text-[10px] md:text-xs tracking-[0.25em] mb-3">
@@ -148,7 +148,7 @@ const WorkPage = () => {
                     {item.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-white/70 text-[10px] md:text-xs border border-white/15 rounded-full px-3 py-1.5 bg-white/[0.02]"
+                        className="text-white/70 text-[10px] md:text-xs border border-white/15 rounded-full px-3 py-1.5 bg-white/2"
                       >
                         {tech}
                       </span>
@@ -204,7 +204,7 @@ const WorkPage = () => {
                   key={step.title}
                   {...reveal}
                   transition={{ duration: 0.6, delay: i * 0.08 }}
-                  className="group border border-white/10 hover:border-[#e2fb4b]/50 rounded-2xl md:rounded-[2rem] p-6 md:p-8 bg-white/[0.02] transition-colors"
+                  className="group border border-white/10 hover:border-[#e2fb4b]/50 rounded-2xl md:rounded-4xl p-6 md:p-8 bg-white/2 transition-colors"
                 >
                   <div className="flex items-start gap-4 md:gap-6">
                     <span className="text-[#e2fb4b] font-bold tracking-widest text-sm md:text-base">
@@ -257,7 +257,7 @@ const WorkPage = () => {
         <section className="mt-40 md:mt-56">
           <motion.div
             {...reveal}
-            className="rounded-[2rem] md:rounded-[3rem] bg-[#e2fb4b] p-10 md:p-20 flex flex-col md:flex-row md:items-center md:justify-between gap-10"
+            className="rounded-4xl md:rounded-[3rem] bg-[#e2fb4b] p-10 md:p-20 flex flex-col md:flex-row md:items-center md:justify-between gap-10"
           >
             <div>
               <h3 className="text-black text-4xl md:text-7xl font-bold uppercase tracking-tighter leading-[0.9] max-w-3xl">
@@ -311,14 +311,14 @@ const FeaturedProject = ({
       transition={{ duration: 1, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
       className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] gap-8 md:gap-12 items-center"
     >
-      <div className="relative aspect-video overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/10">
+      <div className="relative aspect-video overflow-hidden rounded-4xl md:rounded-[3rem] border border-white/10">
         <motion.img
           src={project.image}
           alt={project.title}
           style={{ y: imageY }}
           className="w-full h-[115%] object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
         <div className="absolute top-6 left-6 md:top-8 md:left-8 flex flex-wrap gap-2">
           <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold px-4 py-2 rounded-full bg-black/60 backdrop-blur text-white border border-white/10">
             {statusLabel[project.status]}
@@ -346,7 +346,7 @@ const FeaturedProject = ({
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="text-white/70 text-[10px] md:text-xs border border-white/15 rounded-full px-3 py-1.5 bg-white/[0.02]"
+              className="text-white/70 text-[10px] md:text-xs border border-white/15 rounded-full px-3 py-1.5 bg-white/2"
             >
               {tech}
             </span>

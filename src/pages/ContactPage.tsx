@@ -1,14 +1,12 @@
 import { useState, type FormEvent } from 'react';
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { socialLinks } from '../data/projects';
 
 const CONTACT_LINKS = {
   email: socialLinks.email,
-  phone: 'tel:+919315868930',
-  whatsapp: 'https://wa.me/919315868930',
   location: 'https://www.google.com/maps/search/?api=1&query=Delhi,India',
   linkedin: socialLinks.linkedin,
   github: socialLinks.github,
@@ -27,13 +25,6 @@ const contactCards = [
     href: CONTACT_LINKS.email,
     icon: Mail,
     cursor: 'Mail',
-  },
-  {
-    label: 'Phone',
-    value: '+91 93158 68930',
-    href: CONTACT_LINKS.phone,
-    icon: Phone,
-    cursor: 'Call',
   },
   {
     label: 'Base',
@@ -56,22 +47,23 @@ const ContactPage = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const whatsappMessage = [
-      'Hello Amrit,',
-      '',
-      'I want to connect regarding a project.',
-      '',
-      `Name: ${formData.fullName}`,
-      `Email: ${formData.email}`,
-      `Project Goal: ${formData.projectGoal}`,
-      `Message: ${formData.message || 'Not provided'}`,
-    ].join('\n');
+    const subject = encodeURIComponent(
+      `${formData.projectGoal} enquiry from ${formData.fullName}`
+    );
+    const body = encodeURIComponent(
+      [
+        'Hello Amrit,',
+        '',
+        'I want to connect regarding a project.',
+        '',
+        `Name: ${formData.fullName}`,
+        `Email: ${formData.email}`,
+        `Project Goal: ${formData.projectGoal}`,
+        `Message: ${formData.message || 'Not provided'}`,
+      ].join('\n')
+    );
 
-    const whatsappUrl = `${CONTACT_LINKS.whatsapp}?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-
-    window.location.href = whatsappUrl;
+    window.location.href = `${CONTACT_LINKS.email}?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (field: keyof typeof formData, value: string) => {
@@ -83,36 +75,33 @@ const ContactPage = () => {
 
   return (
     <PageTransition>
-      <div className="bg-[#0a0a0a] pt-32 md:pt-40 pb-2 md:pb-4 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.85fr)] gap-12 xl:gap-20 items-start">
+      <div className="bg-[#0a0a0a] px-4 pb-8 pt-28 sm:px-6 md:px-12 md:pb-4 md:pt-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 items-start gap-8 md:gap-12 xl:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.85fr)] xl:gap-20">
             <div className="min-w-0">
               <motion.h1
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="text-[clamp(3.2rem,9vw,7rem)] xl:text-[clamp(4rem,5.6vw,6.2rem)] font-bold uppercase leading-[0.88] tracking-tighter text-white mb-8 md:mb-10 max-w-[8ch] text-balance break-words"
+                className="mb-6 max-w-[9ch] text-[clamp(2.5rem,12vw,7rem)] font-bold uppercase leading-[0.9] tracking-tighter text-white md:mb-10 xl:text-[clamp(4rem,5.6vw,6.2rem)]"
               >
                 Let&apos;s start a serious project conversation
               </motion.h1>
 
-              <p className="text-lg md:text-xl text-white/60 mb-10 md:mb-14 max-w-2xl font-light leading-relaxed">
+              <p className="mb-8 max-w-2xl text-base font-light leading-relaxed text-white/60 md:mb-14 md:text-xl">
                 If you need a MERN stack build, a polished marketing site, an eCommerce product or a strong portfolio presence, this is the best place to start.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-12 md:mb-16">
-                <span className="rounded-full border border-white/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/70">
-                  14 Months at Puro Marketing
+              <div className="mb-10 flex flex-wrap gap-3 md:mb-16">
+                <span className="rounded-full border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 md:text-xs">
+                  MERN + Web Builds
                 </span>
-                <span className="rounded-full border border-white/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/70">
-                  MERN + Marketing Builds
-                </span>
-                <span className="rounded-full border border-white/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/70">
-                  Response via WhatsApp
+                <span className="rounded-full border border-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 md:text-xs">
+                  Response via Email
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5">
                 {contactCards.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -120,16 +109,16 @@ const ContactPage = () => {
                       key={item.label}
                       href={item.href}
                       {...(item.external ? externalLinkProps : {})}
-                      className="group rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 md:p-6 transition-colors hover:border-[#e2fb4b]/40 cursor-none hover-target"
+                      className="group min-w-0 rounded-3xl border border-white/10 bg-white/3 p-5 transition-colors hover:border-[#e2fb4b]/40 cursor-none hover-target md:p-6"
                       data-cursor={item.cursor}
                     >
-                      <div className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#e2fb4b] transition-colors mb-5">
-                        <Icon size={18} className="text-white group-hover:text-black transition-colors" />
+                      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:bg-[#e2fb4b] md:h-12 md:w-12">
+                        <Icon size={18} className="text-white transition-colors group-hover:text-black" />
                       </div>
-                      <p className="text-white/40 uppercase text-[10px] md:text-xs tracking-[0.2em] mb-2">
+                      <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-white/40 md:text-xs">
                         {item.label}
                       </p>
-                      <p className="text-white text-sm md:text-base group-hover:text-[#e2fb4b] transition-colors break-all">
+                      <p className="break-all text-sm text-white transition-colors group-hover:text-[#e2fb4b] md:text-base">
                         {item.value}
                       </p>
                     </a>
@@ -137,36 +126,29 @@ const ContactPage = () => {
                 })}
               </div>
 
-              <div className="mt-12 md:mt-16 pt-8 border-t border-white/10">
-                <p className="text-white/40 uppercase text-[10px] md:text-xs tracking-[0.2em] mb-4">
+              <div className="mt-10 border-t border-white/10 pt-8 md:mt-16">
+                <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-white/40 md:text-xs">
                   Quick Links
                 </p>
 
-                <div className="flex flex-wrap gap-4 md:gap-6 text-white/70 uppercase text-xs md:text-sm tracking-widest">
-                  <a
-                    href={CONTACT_LINKS.whatsapp}
-                    {...externalLinkProps}
-                    className="hover:text-[#e2fb4b] transition-colors"
-                  >
-                    WhatsApp
-                  </a>
+                <div className="flex flex-wrap gap-4 text-xs uppercase tracking-widest text-white/70 md:gap-6 md:text-sm">
                   <a
                     href={CONTACT_LINKS.linkedin}
                     {...externalLinkProps}
-                    className="hover:text-[#e2fb4b] transition-colors"
+                    className="transition-colors hover:text-[#e2fb4b]"
                   >
                     LinkedIn
                   </a>
                   <a
                     href={CONTACT_LINKS.github}
                     {...externalLinkProps}
-                    className="hover:text-[#e2fb4b] transition-colors"
+                    className="transition-colors hover:text-[#e2fb4b]"
                   >
                     GitHub
                   </a>
                   <Link
                     to={CONTACT_LINKS.portfolio}
-                    className="hover:text-[#e2fb4b] transition-colors"
+                    className="transition-colors hover:text-[#e2fb4b]"
                   >
                     Portfolio
                   </Link>
@@ -179,26 +161,26 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative min-w-0 bg-white/[0.04] p-6 md:p-10 rounded-[1.75rem] md:rounded-[2.5rem] border border-white/10 h-fit overflow-hidden"
+              className="relative min-w-0 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/4 p-5 sm:p-6 md:rounded-[2.5rem] md:p-10"
             >
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/[0.06] to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-linear-to-b from-white/6 to-transparent" />
 
               <div className="relative">
                 <div className="mb-8 md:mb-10">
-                  <p className="text-[#e2fb4b] uppercase text-[10px] md:text-xs tracking-[0.25em] font-bold mb-3">
+                  <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#e2fb4b] md:text-xs">
                     Enquiry Form
                   </p>
-                  <h2 className="text-white text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-3">
+                  <h2 className="mb-3 text-2xl font-bold uppercase tracking-tighter text-white sm:text-3xl md:text-4xl">
                     Tell me what you&apos;re building
                   </h2>
-                  <p className="text-white/50 text-sm md:text-base leading-relaxed">
-                    This opens WhatsApp with your project details pre-filled for a faster first response.
+                  <p className="text-sm leading-relaxed text-white/50 md:text-base">
+                    This opens your email app with project details pre-filled for a faster first response.
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7">
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-white/40 uppercase text-[10px] md:text-xs tracking-widest block">
+                    <label className="block text-[10px] uppercase tracking-widest text-white/40 md:text-xs">
                       Full Name
                     </label>
                     <input
@@ -208,12 +190,12 @@ const ContactPage = () => {
                       autoComplete="name"
                       value={formData.fullName}
                       onChange={(e) => handleChange('fullName', e.target.value)}
-                      className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white outline-none focus:border-[#e2fb4b] transition-colors placeholder:text-white/15 text-sm md:text-base"
+                      className="w-full border-b border-white/10 bg-transparent py-3 text-sm text-white outline-none transition-colors placeholder:text-white/15 focus:border-[#e2fb4b] md:py-4 md:text-base"
                     />
                   </div>
 
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-white/40 uppercase text-[10px] md:text-xs tracking-widest block">
+                    <label className="block text-[10px] uppercase tracking-widest text-white/40 md:text-xs">
                       Email Address
                     </label>
                     <input
@@ -223,18 +205,18 @@ const ContactPage = () => {
                       autoComplete="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
-                      className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white outline-none focus:border-[#e2fb4b] transition-colors placeholder:text-white/15 text-sm md:text-base"
+                      className="w-full border-b border-white/10 bg-transparent py-3 text-sm text-white outline-none transition-colors placeholder:text-white/15 focus:border-[#e2fb4b] md:py-4 md:text-base"
                     />
                   </div>
 
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-white/40 uppercase text-[10px] md:text-xs tracking-widest block">
+                    <label className="block text-[10px] uppercase tracking-widest text-white/40 md:text-xs">
                       Project Goal
                     </label>
                     <select
                       value={formData.projectGoal}
                       onChange={(e) => handleChange('projectGoal', e.target.value)}
-                      className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white outline-none focus:border-[#e2fb4b] transition-colors appearance-none text-sm md:text-base cursor-pointer"
+                      className="w-full appearance-none border-b border-white/10 bg-transparent py-3 text-sm text-white outline-none transition-colors focus:border-[#e2fb4b] md:py-4 md:text-base"
                     >
                       <option value="Full Stack Website" className="bg-[#0a0a0a]">
                         Full Stack Website
@@ -255,7 +237,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="space-y-2 md:space-y-3">
-                    <label className="text-white/40 uppercase text-[10px] md:text-xs tracking-widest block">
+                    <label className="block text-[10px] uppercase tracking-widest text-white/40 md:text-xs">
                       Project Brief
                     </label>
                     <textarea
@@ -263,18 +245,18 @@ const ContactPage = () => {
                       placeholder="Share your idea, goals, deadline or required features..."
                       value={formData.message}
                       onChange={(e) => handleChange('message', e.target.value)}
-                      className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-white outline-none focus:border-[#e2fb4b] transition-colors resize-none placeholder:text-white/15 text-sm md:text-base"
+                      className="w-full resize-none border-b border-white/10 bg-transparent py-3 text-sm text-white outline-none transition-colors placeholder:text-white/15 focus:border-[#e2fb4b] md:py-4 md:text-base"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="group w-full bg-[#e2fb4b] text-black py-4 md:py-5 rounded-full font-bold uppercase tracking-widest flex items-center justify-center gap-4 hover:scale-[1.02] active:scale-95 transition-transform text-xs md:text-sm"
+                    className="group flex w-full items-center justify-center gap-4 rounded-full bg-[#e2fb4b] py-4 text-xs font-bold uppercase tracking-widest text-black transition-transform hover:scale-[1.02] active:scale-95 md:py-5 md:text-sm"
                   >
                     Send Enquiry
                     <ArrowRight
                       size={18}
-                      className="md:w-5 md:h-5 group-hover:translate-x-2 transition-transform"
+                      className="transition-transform group-hover:translate-x-2 md:h-5 md:w-5"
                     />
                   </button>
                 </form>

@@ -10,7 +10,7 @@ const SOCIAL_ITEMS = [
   { label: 'Email', href: socialLinks.email },
 ] as const;
 
-const LOCATIONS = ['Delhi', 'India', 'Remote Friendly'] as const;
+const LOCATIONS = ['India', 'Worldwide', 'Remote Friendly'] as const;
 
 const externalLinkProps = {
   target: '_blank',
@@ -65,9 +65,6 @@ export const Footer = () => {
 
             <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
               <span className="rounded-full border border-black/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-black/70">
-                14 Months at Puro Marketing
-              </span>
-              <span className="rounded-full border border-black/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-black/70">
                 MERN Stack Delivery
               </span>
               <span className="rounded-full border border-black/10 px-4 py-2 text-[10px] md:text-xs uppercase tracking-widest font-bold text-black/70">
@@ -80,7 +77,7 @@ export const Footer = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mt-12 md:mt-20 lg:mt-16 p-6 md:p-8 border border-black/10 rounded-[1.5rem] md:rounded-[2rem] bg-black/[0.045] w-full lg:max-w-[720px] shadow-[0_24px_80px_rgba(0,0,0,0.08)]"
+                className="mt-12 md:mt-20 lg:mt-16 p-6 md:p-8 border border-black/10 rounded-3xl md:rounded-4xl bg-black/4.5 w-full lg:max-w-[720px] shadow-[0_24px_80px_rgba(0,0,0,0.08)]"
               >
                 <h3 className="text-black font-bold uppercase tracking-widest text-[10px] md:text-sm mb-6">
                   Quick Contact
@@ -125,7 +122,7 @@ export const Footer = () => {
             )}
           </div>
 
-          <div className="flex flex-row lg:flex-col flex-wrap gap-12 md:gap-20 lg:gap-10 text-black w-full lg:w-auto lg:min-w-[240px] lg:items-end lg:text-right lg:pt-2">
+          <div className="flex flex-row lg:flex-col flex-wrap gap-12 md:gap-20 lg:gap-10 text-black w-full lg:w-auto lg:min-w-60 lg:items-end lg:text-right lg:pt-2">
             <div className="space-y-4 min-w-[120px] lg:w-full">
               <h4 className="uppercase font-bold tracking-widest text-[10px] md:text-sm opacity-40">
                 Connect

@@ -64,7 +64,7 @@ export const Services = () => {
 
             {/* Hover Background */}
             <motion.div 
-              className="absolute inset-0 bg-[#111111] -z-0"
+              className="absolute inset-0 bg-[#111111] z-0"
               initial={{ scaleY: 0 }}
               whileHover={{ scaleY: 1 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}

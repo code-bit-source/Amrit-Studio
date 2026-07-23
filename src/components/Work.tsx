@@ -54,7 +54,7 @@ export const Work = () => {
             Selected Work
           </p>
           <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter text-white">
-            Puro Marketing <br /> <span className="text-white/30">and beyond</span>
+            Selected <br /> <span className="text-white/30">project work</span>
           </h2>
         </div>
         <p className="text-white/45 max-w-sm md:text-right uppercase text-[10px] md:text-xs tracking-widest font-bold">
@@ -84,15 +84,15 @@ export const Work = () => {
               key={project.title}
               {...revealProps}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className="group rounded-[1.8rem] overflow-hidden border border-white/10 bg-white/[0.02] hover:border-white/25 transition-colors"
+              className="group rounded-[1.8rem] overflow-hidden border border-white/10 bg-white/2 hover:border-white/25 transition-colors"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-4/5 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/15 to-transparent" />
                 <div className="absolute top-5 left-5 flex flex-wrap gap-2">
                   <span
                     className="text-[10px] md:text-xs uppercase tracking-widest font-bold px-3 py-1.5 rounded-full border border-white/10 backdrop-blur bg-black/55 text-white"
@@ -131,7 +131,7 @@ export const Work = () => {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-white/70 text-[10px] md:text-xs border border-white/10 rounded-full px-3 py-1.5 bg-white/[0.03]"
+                      className="text-white/70 text-[10px] md:text-xs border border-white/10 rounded-full px-3 py-1.5 bg-white/3"
                     >
                       {tech}
                     </span>
@@ -174,7 +174,7 @@ export const Work = () => {
               key={project.title}
               {...revealProps}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className="group border border-white/10 hover:border-[#e2fb4b]/45 transition-colors rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 bg-white/[0.02]"
+              className="group border border-white/10 hover:border-[#e2fb4b]/45 transition-colors rounded-3xl md:rounded-4xl p-6 md:p-8 bg-white/2"
             >
               <div className="flex items-start justify-between gap-4 mb-5">
                 <div>
@@ -201,7 +201,7 @@ export const Work = () => {
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-white/70 text-[10px] md:text-xs border border-white/10 rounded-full px-3 py-1.5 bg-white/[0.02]"
+                    className="text-white/70 text-[10px] md:text-xs border border-white/10 rounded-full px-3 py-1.5 bg-white/2"
                   >
                     {tech}
                   </span>
@@ -243,7 +243,7 @@ export const Work = () => {
               key={step.title}
               {...revealProps}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 items-start py-8 md:py-10 border-b border-white/10 hover:bg-white/[0.02] transition-colors px-2"
+              className="grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 items-start py-8 md:py-10 border-b border-white/10 hover:bg-white/2 transition-colors px-2"
             >
               <span className="text-[#e2fb4b] text-sm md:text-base font-bold tracking-widest">
                 {step.number}
@@ -290,7 +290,7 @@ export const Work = () => {
 
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/10 pt-8 md:pt-12">
         <p className="text-white/50 text-sm md:text-base font-light max-w-2xl">
-          Listed Puro Marketing projects can be referenced through founder {companyReference.founder} at {companyReference.phone}.
+          A curated mix of product, portfolio and marketing-focused builds across different delivery contexts.
         </p>
         <a
           href={socialLinks.linkedin}

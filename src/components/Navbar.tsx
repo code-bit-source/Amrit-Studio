@@ -103,7 +103,7 @@ export const Navbar = () => {
             transition={{ duration: 0.25, ease: 'easeOut' }}
             className="fixed inset-x-4 top-[84px] z-40 md:hidden"
           >
-            <div className="rounded-[2rem] border border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl p-6 flex flex-col gap-4 shadow-[0_16px_60px_rgba(0,0,0,0.4)]">
+            <div className="rounded-4xl border border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl p-6 flex flex-col gap-4 shadow-[0_16px_60px_rgba(0,0,0,0.4)]">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

@@ -55,7 +55,7 @@ export const ExperienceSection = () => {
               key={entry.company + entry.role}
               {...revealProps}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className="rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 md:p-8"
+              className="rounded-3xl md:rounded-4xl border border-white/10 bg-white/2 p-6 md:p-8"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
                 <div>
@@ -89,7 +89,7 @@ export const ExperienceSection = () => {
 
         <motion.aside
           {...revealProps}
-          className="rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-white/[0.02] p-6 md:p-8 h-fit"
+          className="rounded-3xl md:rounded-4xl border border-white/10 bg-white/2 p-6 md:p-8 h-fit"
         >
           <p className="text-[#e2fb4b] uppercase text-[10px] md:text-xs tracking-widest font-bold mb-4">
             Company Reference
@@ -102,7 +102,24 @@ export const ExperienceSection = () => {
               Founder: <span className="text-white">{companyReference.founder}</span>
             </p>
             <p>
-              Contact: <span className="text-white">{companyReference.phone}</span>
+              Contact:{' '}
+              <a
+                href={`mailto:${companyReference.phone}`}
+                className="text-white underline underline-offset-4 transition-colors hover:text-[#e2fb4b]"
+              >
+                {companyReference.phone}
+              </a>
+            </p>
+            <p>
+              Website:{' '}
+              <a
+                href={companyReference.website}
+                target="_blank"
+                rel="noreferrer"
+                className="text-white underline underline-offset-4 transition-colors hover:text-[#e2fb4b]"
+              >
+                {companyReference.website.replace('https://', '')}
+              </a>
             </p>
             <p>
               Reference context: confirmation available for the listed Puro Marketing projects and role history.
